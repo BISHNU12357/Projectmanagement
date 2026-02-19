@@ -11,6 +11,11 @@ const projectSchema = new Schema( {
         type: String,
     },
     createdBy: {
-        type:
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
     }
-} )
+}, { timestamps: true }, );
+
+export const Project = mongoose.model( "Project", projectSchema );
+ 
